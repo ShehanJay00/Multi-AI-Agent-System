@@ -31,8 +31,8 @@ def load_image(image_path):
 
 # Display an aesthetic title
 st.title("MovieMate 🎥")
-st.header("Personalized Movie Recommendation System")
-st.subheader("find a movie with your preferences")
+#st.header("Personalized Movie Recommendation System")
+st.subheader("Personalized Movie Recommendation System")
 
 # Add some famous movie images with hover effects
 col1, col2, col3 = st.columns(3)
@@ -58,15 +58,29 @@ with col3:
         unsafe_allow_html=True,
     )
 
-# Add a modern text box for asking questions
-st.write("\n")
-question = st.text_input(
-    "Ask MovieMate a question about movies, actors, directors, or recommendations:",
-    placeholder="E.g., Recommend me a movie like Inception"
-)
 
-# Respond to the question
-if question:
-    # Placeholder response - Replace with your movie recommendation logic
-    response = "Great choice! Based on your interest, you might enjoy 'Interstellar.'"
-    st.markdown(f"**MovieMate says:** {response}")
+# Add the second row of famous movie images with hover effects
+col4, col5, col6 = st.columns(3)
+
+with col4:
+    titanic_image = load_image("Images/titanic.jpg")  # Replace with the path to your image file
+    st.markdown(
+        f'<div class="image-container"><img src="data:image/jpeg;base64,{titanic_image}" alt="Titanic" width="300"></div>',
+        unsafe_allow_html=True,
+    )
+
+with col5:
+    matrix_image = load_image("Images/matrix.jpg")  # Replace with the path to your image file
+    st.markdown(
+        f'<div class="image-container"><img src="data:image/jpeg;base64,{matrix_image}" alt="The Matrix" width="300"></div>',
+        unsafe_allow_html=True,
+    )
+
+with col6:
+    gladiator_image = load_image("Images/gladiator.jpg")  # Replace with the path to your image file
+    st.markdown(
+        f'<div class="image-container"><img src="data:image/jpeg;base64,{gladiator_image}" alt="Gladiator" width="300"></div>',
+        unsafe_allow_html=True,
+    )
+
+

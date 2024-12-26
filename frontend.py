@@ -72,7 +72,7 @@ st.markdown(
         font-size: 16px;
         line-height: 1.6;
         font-family: Arial, sans-serif;
-        text-align: justify;
+        
     }
     </style>
     <div class="description">

@@ -3,6 +3,7 @@ from dotenv import load_dotenv
 import os
 import json
 import streamlit as st
+from systemFrontEnd import frontend
 
 load_dotenv()
 
@@ -29,16 +30,15 @@ def run_flow(message: str,) -> dict:
     response = requests.post(api_url, json=payload, headers=headers)
     return response.json()
 
+# result = run_flow("what are the movies directed by christopher nolen with more than 7.0 rating")
+# print(result)
 
 def main():
     frontend()
-    
-    st.set_page_config(page_title="MovieMate - Your Movie Companion", layout="wide")
-    st.title ("Chat Interface")
 
-    message = st. text_area ("Message", placeholder="Ask something...")
+    message = st. text_area ("Ask Anything Related to Movies..!", placeholder="Message MovieMate")
     
-    if st. button ("Run Flow"):
+    if st. button ("Run the Prompt"):
         if not message.strip():
             st.error ("Please enter a message")
             return
@@ -51,6 +51,7 @@ def main():
             st. markdown (response)
         except Exception as e:
             st. error (str(e))
+
 
 
 if __name__ == "__main__":

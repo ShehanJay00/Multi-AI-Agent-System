@@ -31,7 +31,8 @@ def run_flow(message: str,) -> dict:
 
 
 def main():
-
+    frontend()
+    
     st.set_page_config(page_title="MovieMate - Your Movie Companion", layout="wide")
     st.title ("Chat Interface")
 

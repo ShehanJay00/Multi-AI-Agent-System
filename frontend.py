@@ -29,10 +29,63 @@ def load_image(image_path):
         data = file.read()
     return base64.b64encode(data).decode()
 
-# Display an aesthetic title
-st.title("MovieMate 🎥")
-#st.header("Personalized Movie Recommendation System")
-st.subheader("Personalized Movie Recommendation System")
+# Inject custom CSS for fonts and center alignment
+st.markdown(
+    """
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&family=Open+Sans:wght@400&display=swap');
+    
+    .title {
+        text-align: center;
+        font-family: 'Roboto', sans-serif;
+        font-size: 3.5em;
+        color: #C0C0C0;
+    }
+
+    .subtitle {
+        text-align: center;
+        font-family: 'Open Sans', sans-serif;
+        font-size: 1.5em;
+        color: 	#808080;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True,
+)
+
+# Centered title and subtitle with custom fonts
+st.markdown('<div class="title">MovieMate🎥</div>', unsafe_allow_html=True)
+st.markdown('<div class="subtitle">Personalized Movie Recommendation System</div>', unsafe_allow_html=True)
+
+
+
+# Add spacing between title and chat interface
+st.write("<div style='height: 30px;'></div>", unsafe_allow_html=True)
+
+
+# Add description for MovieMate
+st.markdown(
+    """
+    <style>
+    .description {
+        color: #C0C0C0; 
+        font-size: 16px;
+        line-height: 1.6;
+        font-family: Arial, sans-serif;
+        text-align: justify;
+    }
+    </style>
+    <div class="description">
+        <b>Welcome to MovieMate 🎥 – Your Ultimate Movie Companion!</b>  
+        MovieMate is a cutting-edge platform designed to enhance your movie-watching experience, powered by an advanced Multi-Agent System. Whether you're a casual viewer or a cinephile, MovieMate is here to help you discover, explore, and enjoy movies like never before. With personalized recommendations, curated lists, and advanced search capabilities, MovieMate brings the world of cinema to your fingertips. Leveraging the power of intelligent agents, MovieMate provides tailored movie suggestions, interactive queries for instant answers about films, actors, and genres, and a visually engaging interface that ensures an unparalleled user experience. Whether you're looking for your next favorite film or diving deep into cinematic trivia, MovieMate is your ultimate destination for all things movies. Start your journey into the world of cinema with MovieMate today!
+    </div>
+    """,
+    unsafe_allow_html=True
+)
+
+
+st.write("<div style='height: 30px;'></div>", unsafe_allow_html=True)
+st.write("<div style='height: 30px;'></div>", unsafe_allow_html=True)
 
 # Add some famous movie images with hover effects
 col1, col2, col3 = st.columns(3)
@@ -52,32 +105,36 @@ with col2:
     )
 
 with col3:
-    avatar_image = load_image("Images/avatar.jpg")  # Replace with the path to your image file
+    tofe_image = load_image("Images/TofE.jpg")  # Replace with the path to your image file
     st.markdown(
-        f'<div class="image-container"><img src="data:image/jpeg;base64,{avatar_image}" alt="Avatar" width="300"></div>',
+        f'<div class="image-container"><img src="data:image/jpeg;base64,{tofe_image}" alt="Avatar" width="300"></div>',
         unsafe_allow_html=True,
     )
 
+
+# Add spacing between rows
+st.write("<div style='height: 30px;'></div>", unsafe_allow_html=True)
+st.write("<div style='height: 30px;'></div>", unsafe_allow_html=True)
 
 # Add the second row of famous movie images with hover effects
 col4, col5, col6 = st.columns(3)
 
 with col4:
-    titanic_image = load_image("Images/titanic.jpg")  # Replace with the path to your image file
+    moana_image = load_image("Images/Moana.jpg")  # Replace with the path to your image file
     st.markdown(
-        f'<div class="image-container"><img src="data:image/jpeg;base64,{titanic_image}" alt="Titanic" width="300"></div>',
+        f'<div class="image-container"><img src="data:image/jpeg;base64,{moana_image}" alt="Titanic" width="300"></div>',
         unsafe_allow_html=True,
     )
 
 with col5:
-    matrix_image = load_image("Images/matrix.jpg")  # Replace with the path to your image file
+    matrix_image = load_image("Images/Matrix.jpg")  # Replace with the path to your image file
     st.markdown(
         f'<div class="image-container"><img src="data:image/jpeg;base64,{matrix_image}" alt="The Matrix" width="300"></div>',
         unsafe_allow_html=True,
     )
 
 with col6:
-    gladiator_image = load_image("Images/gladiator.jpg")  # Replace with the path to your image file
+    gladiator_image = load_image("Images/Galadiator.jpg")  # Replace with the path to your image file
     st.markdown(
         f'<div class="image-container"><img src="data:image/jpeg;base64,{gladiator_image}" alt="Gladiator" width="300"></div>',
         unsafe_allow_html=True,

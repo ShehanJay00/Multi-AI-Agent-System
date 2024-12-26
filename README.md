@@ -2,4 +2,4 @@
 
 Install the Requirements
 
-Run the python file using Streamlit
+Run the python file (main.py) using Streamlit
